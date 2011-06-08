@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link href="css/fancybox.css" rel="stylesheet">
+    <link href="css/demo.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-fancybox.js"></script>
+    <script src="js/jquery-flickr.js"></script>
+    <script>
+      var api_key = "ceedea54d4a6a93de57f7f0f8b448106"
+      $(function(){
+        $("#photos").flickrGallery(api_key)
+        
+        //$("#photos").flickrGallery(api_key, { size: 30, fancybox_options: {} })
+      })
+    </script>
+  </head>
+  <body>
+    <h2>jQueryFlickr</h2>
+    <h3>demo</h3>
+    <div id="photos" data-set_id="72157625778631893"></div>
+    <p>html:</p>
+    <textarea>  
+      <div id="photos" data-set_id="72157625778631893"></div>
+    </textarea>
+    <p>js:</p>
+    <textarea>
+      var api_key = "ceedea54d4a6a93de57f7f0f8b448106"
+      $(function(){
+        $("#photos").flickrGallery(api_key)
+        
+        //$("#photos").flickrGallery(api_key, { size: 30, fancybox_options: {} })
+      })
+    </textarea>
+  </body>
+</html>
