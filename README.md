@@ -32,6 +32,8 @@ you can find the "set_id" like this:
 - look at the url, it will be something like: http://www.flickr.com/photos/makevoid/sets/72157604299605007/
 - the SET_ID is the number in the url! (in my case 72157604299605007)
 
+you also need to copy "images/fancybox" folder and you may need to edit the images path in "css/fancybox.css"!
+
 
 ### configuration:
 
