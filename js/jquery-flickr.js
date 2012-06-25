@@ -27,8 +27,6 @@ function photo_url(photo, size) {
   return "http://farm"+photo.farm+".static.flickr.com/"+photo.server+"/"+photo.id+"_"+photo.secret+"_"+size+".jpg" 
 }
 
-
-//$("#photos").append("<img src='"+photo_url+"'>")
 function FlickrGallery() {
   
   this.init = function(tag, api_key, options) {
@@ -44,23 +42,6 @@ function FlickrGallery() {
     var photoset_id = this.elem.attr("data-set_id")
     var api_url = "http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key="+api_key+"&photoset_id="+photoset_id+"&format=json&nojsoncallback=1"
     
-    // DEBUG IE --- I will drop it as soon as I check it!
-    // url2 = "http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=ceedea54d4a6a93de57f7f0f8b448106&photoset_id=72157625778631893&format=json&nojsoncallback=1"
-    // var date = new Date();
-    // $.ajax({
-    //   url: url2+"&_="+date.getTime(),
-    //   dataType: 'text',
-    //   type: "GET",
-    //   cache: false,
-    //   success: function(data){     
-    //     data = eval("(" + data + ")");
-    //     $("#photos").prepend(data.photoset.id)    
-    //     //console.log(data)
-    //   },
-    //   error: function(xhr, status, error) {
-    //        $("#photos").prepend("error: "+xhr.status+", "+error)
-    //    }
-    // })
     var self = this
     
     $.getJSON(api_url, function(data) {
@@ -78,8 +59,6 @@ function FlickrGallery() {
   }
   
   this.render_images = function() {
-    //console.log(photos.all)
-    //console.log(photos.randomized())
     var self = this
     $.each(photos.randomized(), function(idx, photo) {
       klass = ""
@@ -94,7 +73,6 @@ function FlickrGallery() {
     })
   }
 }
-
 
 
 $.fn.flickrGallery = function(api_key, options) {
